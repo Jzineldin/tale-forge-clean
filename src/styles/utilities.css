@@ -1,0 +1,76 @@
+
+/* Utility Classes */
+.font-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(245, 158, 11, 0.3); /* Amber selection */
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.5); /* Amber scrollbar */
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.8);
+}
+
+/* Theme utilities */
+.theme-light {
+  color-scheme: light;
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.theme-dark {
+  color-scheme: dark;
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Force theme utilities */
+.force-light-bg {
+  background: hsl(var(--background)) !important;
+}
+
+.force-light-text {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Override any potential purple theme artifacts */
+.bg-purple-600,
+.bg-purple-500,
+.bg-purple-700 {
+  background: hsl(var(--primary)) !important;
+}
+
+.text-purple-600,
+.text-purple-500,
+.text-purple-400 {
+  color: hsl(var(--primary)) !important;
+}
+
+.border-purple-600,
+.border-purple-500,
+.border-purple-400 {
+  border-color: hsl(var(--primary)) !important;
+}

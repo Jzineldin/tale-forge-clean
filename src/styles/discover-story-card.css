@@ -1,0 +1,125 @@
+/* 
+ * DEPRECATED: This file is scheduled for removal.
+ * Use the hybrid CSS variables + Tailwind approach instead.
+ * See: Docs/development/COMPONENT_STYLING_GUIDE.md
+ * 
+ * Target removal date: 2025-09-15
+ */
+
+/* Discover Story Card - Integration with Unified Story Card */
+/* This file applies the discover browsing theme to the shared StoryCard components */
+
+/* Apply discover theme to story card container */
+.discover-story-card.story-card-container {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Enhanced hover effects */
+.discover-story-card.story-card-container:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(245, 158, 11, 0.1);
+  transform: perspective(900px) rotateX(0deg) translateY(-5px);
+}
+
+/* Custom badges for discover stories */
+.discover-story-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.discover-story-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.discover-story-badge.genre-badge {
+  background: linear-gradient(135deg, 
+    rgba(139, 69, 19, 0.9) 0%,
+    rgba(160, 82, 45, 0.8) 100%
+  );
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  color: white;
+}
+
+.discover-story-badge.audio-badge {
+  background: rgba(124, 58, 237, 0.3);
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.genre-emoji {
+  font-size: 1rem;
+}
+
+/* Custom metadata styling */
+.discover-story-metadata {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Bookmark button styling */
+.discover-bookmark-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.discover-bookmark-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .discover-story-badges {
+    top: 12px;
+    left: 12px;
+    gap: 6px;
+  }
+  
+  .discover-story-badge {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+  
+  .genre-emoji {
+    font-size: 0.9rem;
+  }
+}

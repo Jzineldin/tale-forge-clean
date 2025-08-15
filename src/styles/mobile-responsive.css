@@ -1,0 +1,705 @@
+/* Mobile Responsive CSS - Critical Fixes for Landing Page */
+
+/* Base mobile optimizations */
+@media (max-width: 768px) {
+  /* Ensure minimum font sizes for readability */
+  body {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    -webkit-text-size-adjust: 100% !important;
+    -ms-text-size-adjust: 100% !important;
+  }
+
+  /* Fix text wrapping issues */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    line-height: 1.2 !important;
+  }
+
+  p, span, div {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+
+  /* Ensure proper container widths */
+  .container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Fix button touch targets */
+  button, .btn, [role="button"] {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 16px !important;
+  }
+
+  /* Fix input touch targets */
+  input, textarea, select {
+    min-height: 44px !important;
+    font-size: 16px !important;
+    padding: 0.75rem !important;
+  }
+}
+
+/* Small mobile devices (320px - 480px) */
+@media (max-width: 480px) {
+  /* Hero section optimizations */
+  .tale-forge-title {
+    font-size: 1.75rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .magical-heading {
+    font-size: 1.25rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .text-readable {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Button optimizations */
+  button {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 0.75rem !important;
+    min-height: 48px !important;
+  }
+
+  /* Container padding */
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Glass containers */
+  .glass-hero, .glass-enhanced {
+    padding: 1rem !important;
+    border-radius: 0.75rem !important;
+  }
+}
+
+/* Medium mobile devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .tale-forge-title {
+    font-size: 2.25rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .magical-heading {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .text-readable {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Tablet devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tale-forge-title {
+    font-size: 3rem !important;
+  }
+
+  .magical-heading {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Fix specific landing page sections */
+@media (max-width: 768px) {
+  /* Hero section fixes */
+  .hero-section {
+    padding: 2rem 1rem !important;
+    min-height: 100vh !important;
+  }
+
+  /* Feature cards */
+  .feature-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .feature-card p {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Testimonial cards */
+  .testimonial-card {
+    padding: 1rem !important;
+    margin: 0.5rem !important;
+  }
+
+  .testimonial-quote {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Grid layouts */
+  .grid {
+    gap: 1rem !important;
+  }
+
+  /* Spacing fixes */
+  .section {
+    padding: 2rem 1rem !important;
+  }
+
+  .section h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .section p {
+    font-size: 0.875rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Fix text overflow issues */
+@media (max-width: 768px) {
+  /* Prevent text from being cut off */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure proper text wrapping */
+  .text-wrap {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Fix long words */
+  .break-words {
+    word-break: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+/* Fix layout compression */
+@media (max-width: 768px) {
+  /* Ensure proper spacing */
+  .space-y-4 > * + * {
+    margin-top: 1rem !important;
+  }
+
+  .space-y-6 > * + * {
+    margin-top: 1.5rem !important;
+  }
+
+  .space-y-8 > * + * {
+    margin-top: 2rem !important;
+  }
+
+  /* Fix margins and padding */
+  .mb-4 { margin-bottom: 1rem !important; }
+  .mb-6 { margin-bottom: 1.5rem !important; }
+  .mb-8 { margin-bottom: 2rem !important; }
+  
+  .mt-4 { margin-top: 1rem !important; }
+  .mt-6 { margin-top: 1.5rem !important; }
+  .mt-8 { margin-top: 2rem !important; }
+
+  .p-4 { padding: 1rem !important; }
+  .p-6 { padding: 1.5rem !important; }
+  .p-8 { padding: 2rem !important; }
+}
+
+/* Fix sticky header issues */
+@media (max-width: 768px) {
+  /* Ensure header doesn't overlap content */
+  .sticky-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+  }
+
+  /* Add padding to main content to account for sticky header */
+  .main-content {
+    padding-top: 4rem !important;
+  }
+}
+
+/* Fix navigation issues */
+@media (max-width: 768px) {
+  /* Mobile navigation */
+  .mobile-nav {
+    display: block !important;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  /* Hamburger menu */
+  .hamburger-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+/* Fix scrolling issues */
+@media (max-width: 768px) {
+  /* Ensure smooth scrolling */
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  /* Fix overflow issues */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    overflow-x: hidden !important;
+  }
+}
+
+/* Fix image and media issues */
+@media (max-width: 768px) {
+  /* Responsive images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Video responsiveness */
+  video {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Fix form elements */
+@media (max-width: 768px) {
+  /* Form inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+    min-height: 44px !important;
+    padding: 0.75rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* Form labels */
+  label {
+    font-size: 0.875rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+}
+
+/* Fix accessibility issues */
+@media (max-width: 768px) {
+  /* Ensure proper focus states */
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid #fbbf24 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Ensure proper contrast */
+  .text-readable {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile */
+  .animate-magical-float,
+  .animate-magical-spin-slow,
+  .animate-magical-fade-in {
+    animation-duration: 2s !important;
+  }
+
+  /* Optimize backdrop filters */
+  .glass-hero,
+  .glass-enhanced {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+}
+
+/* Fix specific component issues */
+@media (max-width: 768px) {
+  /* Testimonial carousel */
+  .testimonial-carousel {
+    padding: 0 1rem !important;
+  }
+
+  .testimonial-slide {
+    padding: 1rem !important;
+  }
+
+  /* FAQ section */
+  .faq-item {
+    margin-bottom: 1rem !important;
+  }
+
+  .faq-question {
+    font-size: 0.875rem !important;
+    padding: 0.75rem !important;
+  }
+
+  .faq-answer {
+    font-size: 0.75rem !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Waitlist form */
+  .waitlist-form {
+    padding: 1rem !important;
+  }
+
+  .waitlist-form input {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Critical mobile fixes for text wrapping */
+@media (max-width: 480px) {
+  /* Force text wrapping for long words */
+  * {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Specific text fixes */
+  .tale-forge-title {
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+
+  /* Fix "Loved by families of Educators" text */
+  .social-proof-text {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+  }
+}
+
+/* Story creation specific mobile fixes */
+@media (max-width: 768px) {
+  /* Story creation form */
+  .story-creation-form {
+    padding: 1rem !important;
+  }
+
+  .story-creation-form textarea {
+    min-height: 120px !important;
+    font-size: 16px !important;
+  }
+
+  /* Story display */
+  .story-display {
+    padding: 1rem !important;
+  }
+
+  .story-text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Story choices */
+  .story-choices {
+    gap: 0.75rem !important;
+  }
+
+  .story-choice-button {
+    padding: 1rem !important;
+    font-size: 0.875rem !important;
+    min-height: 60px !important;
+  }
+}
+
+/* Voice generation section mobile fixes */
+@media (max-width: 768px) {
+  .voice-generation-section {
+    padding: 1rem !important;
+  }
+
+  .voice-selector {
+    width: 100% !important;
+  }
+
+  .voice-option {
+    padding: 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Story completion mobile fixes */
+@media (max-width: 768px) {
+  .story-completion {
+    padding: 1rem !important;
+  }
+
+  .completion-options {
+    gap: 1rem !important;
+  }
+
+  .completion-button {
+    width: 100% !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Slideshow mobile fixes */
+@media (max-width: 768px) {
+  .slideshow-modal {
+    padding: 1rem !important;
+  }
+
+  .slideshow-content {
+    padding: 1rem !important;
+  }
+
+  .slideshow-text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .slideshow-controls {
+    gap: 0.5rem !important;
+  }
+
+  .slideshow-button {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
+/* Audio player mobile fixes */
+@media (max-width: 768px) {
+  .audio-player {
+    padding: 0.75rem !important;
+  }
+
+  .audio-controls {
+    gap: 0.5rem !important;
+  }
+
+  .audio-button {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .audio-progress {
+    height: 8px !important;
+  }
+}
+
+/* Story history sidebar mobile fixes */
+@media (max-width: 768px) {
+  .story-history-sidebar {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .story-history-item {
+    padding: 0.75rem !important;
+  }
+
+  .story-history-text {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Genre selection mobile fixes */
+@media (max-width: 768px) {
+  .genre-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .genre-card {
+    padding: 1rem !important;
+  }
+
+  .genre-title {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .genre-description {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Loading states mobile fixes */
+@media (max-width: 768px) {
+  .loading-spinner {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .loading-text {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Error states mobile fixes */
+@media (max-width: 768px) {
+  .error-message {
+    padding: 1rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .error-actions {
+    gap: 0.75rem !important;
+  }
+
+  .error-button {
+    width: 100% !important;
+    padding: 0.75rem !important;
+  }
+}
+
+/* Waitlist button mobile fixes */
+@media (max-width: 768px) {
+  .waitlist-button {
+    width: 100% !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    min-height: 56px !important;
+  }
+
+  .waitlist-button-mobile {
+    position: fixed !important;
+    bottom: 1rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    z-index: 100 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+/* Z-index fixes for mobile */
+@media (max-width: 768px) {
+  /* Ensure proper layering */
+  .header {
+    z-index: 50 !important;
+  }
+
+  .modal {
+    z-index: 100 !important;
+  }
+
+  .tooltip {
+    z-index: 200 !important;
+  }
+
+  .dropdown {
+    z-index: 150 !important;
+  }
+
+  .sticky-button {
+    z-index: 75 !important;
+  }
+}
+
+/* Touch target improvements */
+@media (max-width: 768px) {
+  /* Ensure all interactive elements meet minimum touch target size */
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  a[role="button"] {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  /* Improve touch feedback */
+  button:active,
+  [role="button"]:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+/* Landscape orientation fixes */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh !important;
+    padding: 1rem !important;
+  }
+
+  .tale-forge-title {
+    font-size: 2rem !important;
+  }
+
+  .magical-heading {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .tale-forge-title {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-magical-float,
+  .animate-magical-spin-slow,
+  .animate-magical-fade-in {
+    animation: none !important;
+  }
+
+  .transition-all {
+    transition: none !important;
+  }
+}
+
+/* Dark mode optimizations for mobile */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  .glass-hero,
+  .glass-enhanced {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .text-readable {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+}

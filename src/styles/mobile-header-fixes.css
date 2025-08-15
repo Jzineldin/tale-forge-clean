@@ -1,0 +1,75 @@
+/* Mobile Header Fixes */
+@media (max-width: 768px) {
+  /* Ensure header container has proper spacing and overflow handling */
+  .header-container {
+    overflow: hidden;
+    min-height: 64px;
+  }
+  
+  /* Mobile controls container */
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  /* User avatar container - prevent squishing */
+  .user-avatar-mobile {
+    flex-shrink: 0;
+    margin-right: 0.25rem;
+  }
+  
+  /* Action buttons container */
+  .mobile-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+  }
+  
+  /* Ensure avatar doesn't get compressed and stays perfectly round */
+  .user-menu-trigger {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+  }
+  
+  /* Avatar specific fixes - simplified for smooth rendering */
+  [data-radix-avatar-root] {
+    width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+  }
+  
+  /* Avatar fallback fixes - simplified for smooth rendering */
+  [data-radix-avatar-fallback] {
+    width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Mobile button sizing */
+  .mobile-button {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.5rem;
+    flex-shrink: 0;
+  }
+  
+  /* Hamburger menu button */
+  .hamburger-button {
+    min-width: 40px;
+    min-height: 40px;
+    flex-shrink: 0;
+  }
+}

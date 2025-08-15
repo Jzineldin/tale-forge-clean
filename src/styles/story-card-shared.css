@@ -1,0 +1,149 @@
+/* 
+ * DEPRECATED: This file is scheduled for removal.
+ * Use the hybrid CSS variables + Tailwind approach instead.
+ * See: Docs/development/COMPONENT_STYLING_GUIDE.md
+ * 
+ * Target removal date: 2025-09-15
+ */
+
+/* SHARED STORY CARD UTILITIES AND RESPONSIVE STYLES */
+
+.title-row {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* AUTHORITATIVE STORY TITLE STYLES - PREVENTS TEXT CUTOFF */
+.story-title, 
+.story-card-landscape h3,
+.story-card-landscape .story-title {
+  width: 100% !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  overflow: visible !important; /* Allow text to be fully visible */
+  
+  /* Typography that prevents cutoff - Mobile first */
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.6 !important; /* Increased for better spacing */
+  font-weight: 600 !important;
+  font-family: "Inter", sans-serif !important;
+  
+  /* Color and visibility */
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.95),
+    0 4px 8px rgba(0,0,0,0.8),
+    1px 1px 2px rgba(0,0,0,0.9) !important;
+  
+  /* Container constraints that accommodate descenders */
+  max-height: none !important; /* Remove all height constraints */
+  min-height: auto !important; 
+  padding-bottom: 0.5rem !important; /* More space for descenders */
+  margin-bottom: 0.5rem !important;
+  
+  /* Remove webkit line clamping to prevent cutoff */
+  display: block !important; 
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+}
+
+/* GENRE CARD STYLES - REMOVED CONFLICTING RULES */
+/* Old genre-card-title and genre-card-description styles removed */
+/* New card-title styles in components.css take precedence */
+
+/* Text content styles */
+.story-card-landscape p,
+.story-content-text {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  line-height: 1.5 !important;
+  padding-bottom: 0.5rem !important; /* More space for descenders */
+  color: rgba(255,255,255,0.95) !important;
+  text-shadow: 
+    0 1px 2px rgba(0,0,0,0.8),
+    0 2px 4px rgba(0,0,0,0.6) !important;
+  font-size: 0.75rem !important; /* 12px base */
+}
+
+/* === RESPONSIVE TYPOGRAPHY SCALING === */
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .story-title, 
+  .story-card-landscape h3,
+  .story-card-landscape .story-title {
+    font-size: 0.75rem !important; /* 12px */
+    line-height: 1.5 !important;
+    padding-bottom: 0.375rem !important;
+  }
+  
+  .story-card-landscape p,
+  .story-content-text {
+    font-size: 0.6875rem !important; /* 11px */
+  }
+}
+
+/* Mobile */
+@media (min-width: 481px) and (max-width: 640px) {
+  .story-title, 
+  .story-card-landscape h3,
+  .story-card-landscape .story-title {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.6 !important;
+  }
+  
+  .story-card-landscape p,
+  .story-content-text {
+    font-size: 0.75rem !important; /* 12px */
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .story-title, 
+  .story-card-landscape h3,
+  .story-card-landscape .story-title {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.6 !important;
+  }
+  
+  .story-card-landscape p,
+  .story-content-text {
+    font-size: 0.875rem !important; /* 14px */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .story-title, 
+  .story-card-landscape h3,
+  .story-card-landscape .story-title {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+  }
+  
+  .story-card-landscape p,
+  .story-content-text {
+    font-size: 1rem !important; /* 16px */
+  }
+}
+
+/* Large Desktop & 4K */
+@media (min-width: 1441px) {
+  .story-title, 
+  .story-card-landscape h3,
+  .story-card-landscape .story-title {
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.6 !important;
+    padding-bottom: 0.75rem !important; /* Even more space on large screens */
+  }
+  
+  .story-card-landscape p,
+  .story-content-text {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.6 !important;
+  }
+}

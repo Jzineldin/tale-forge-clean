@@ -1,0 +1,127 @@
+/* Design System Adapter: Map legacy classes to unified system */
+/* This file provides a compatibility layer so older components get the new look
+   without changing JSX. Keep rules minimal and reference unified tokens. */
+
+/* Buttons */
+.btn-magical,
+.redesign-btn-primary,
+.golden-button {
+  background: linear-gradient(135deg, var(--primary-amber), var(--primary-amber-dark));
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine animation to match .btn-primary */
+.btn-magical::before,
+.redesign-btn-primary::before,
+.golden-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-slow);
+}
+
+.btn-magical:hover::before,
+.redesign-btn-primary:hover::before,
+.golden-button:hover::before { left: 100%; }
+
+.btn-magical:hover,
+.redesign-btn-primary:hover,
+.golden-button:hover {
+  background: var(--primary-amber-dark);
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-magical:active,
+.redesign-btn-primary:active,
+.golden-button:active { transform: translateY(0); }
+
+/* Outline buttons map to unified secondary */
+.golden-button-outline,
+.btn-magical-outline {
+  background: transparent;
+  color: var(--primary-amber);
+  border: 2px solid var(--primary-amber);
+  border-radius: var(--radius-md);
+  padding: calc(var(--space-md) - 2px) calc(var(--space-lg) - 2px);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.golden-button-outline:hover,
+.btn-magical-outline:hover {
+  background: var(--primary-amber);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Glass cards */
+.glass-enhanced {
+  background: rgba(17, 24, 39, 0.40); /* slate-900/40 for consistency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Remove all hover effects from glass containers globally */
+.glass-enhanced:hover {
+  background: rgba(17, 24, 39, 0.40);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  transform: none;
+}
+
+/* Inputs */
+.glass-input,
+.prompt-textarea {
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  transition: all var(--transition-normal);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.glass-input:focus,
+.prompt-textarea:focus {
+  background: var(--bg-card-hover);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+  outline: none;
+}
+
+.glass-input::placeholder,
+.prompt-textarea::placeholder { color: var(--text-subtle); }
+
+/* Page containers */
+.magical-page-container { min-height: 100vh; position: relative; overflow-x: hidden; }
+.magical-content { position: relative; z-index: 10; min-height: 100vh; padding-top: 80px; }
+
+/* Story card aliasing (non-breaking) */
+.magical-story-card { background: var(--bg-card); border: 1px solid var(--border-primary); border-radius: var(--radius-lg); backdrop-filter: blur(12px); transition: all var(--transition-normal); }
+.magical-story-card:hover { background: var(--bg-card-hover); border-color: var(--border-secondary); box-shadow: var(--shadow-md); }

@@ -1,0 +1,202 @@
+/* 
+ * DEPRECATED: This file is scheduled for removal.
+ * Use the hybrid CSS variables + Tailwind approach instead.
+ * See: Docs/development/COMPONENT_STYLING_GUIDE.md
+ * 
+ * Target removal date: 2025-09-15
+ */
+
+/* Magical Story Card - Integration with Unified Story Card */
+/* This file applies the magical library theme to the shared StoryCard components */
+
+/* Import the magical theme fonts if not already imported */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+/* Apply magical theme to story card container */
+.magical-story-card.story-card-container {
+  /* Enhanced magical glow effect */
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  
+  /* Enhance the glass-card aesthetic */
+  background: linear-gradient(135deg, rgba(30, 30, 40, 0.8), rgba(20, 20, 30, 0.9));
+  border: 1px solid rgba(255, 191, 0, 0.3);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 191, 0, 0.2) inset;
+}
+
+/* Enhanced hover effects */
+.magical-story-card.story-card-container:hover {
+  transform: perspective(900px) rotateX(0deg) translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 191, 0, 0.4) inset,
+    0 0 20px rgba(255, 191, 0, 0.1);
+  border-color: rgba(255, 191, 0, 0.5);
+}
+
+/* Magical glow effect on hover */
+.magical-story-card.story-card-container::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, 
+    rgba(245, 158, 11, 0.4) 0%, 
+    rgba(168, 85, 247, 0.3) 25%, 
+    rgba(59, 130, 246, 0.3) 50%, 
+    rgba(16, 185, 129, 0.3) 75%, 
+    rgba(245, 158, 11, 0.4) 100%);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.magical-story-card.story-card-container:hover::before {
+  opacity: 0.8;
+  animation: magical-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes magical-glow {
+  0% {
+    filter: blur(10px) brightness(1);
+  }
+  100% {
+    filter: blur(14px) brightness(1.3);
+  }
+}
+
+/* Enhanced title styling */
+.magical-story-card .story-card-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #FFD700;
+  text-shadow: 
+    0 0 8px rgba(245, 158, 11, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 4px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced description styling */
+.magical-story-card .story-card-description {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Enhanced badge styling */
+.magical-story-card .story-card-badge {
+  backdrop-filter: blur(12px) brightness(1.4);
+  border: 2px solid rgba(255, 191, 0, 0.5);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(255, 191, 0, 0.2);
+}
+
+.magical-story-card .story-card-badge.top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.magical-story-card .story-card-badge.top-left {
+  top: 12px;
+  left: 12px;
+}
+
+/* Enhanced primary action button */
+.magical-story-card .story-card-primary-action {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #1A1A2E;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow:
+    0 4px 15px rgba(255, 165, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.magical-story-card .story-card-primary-action::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.magical-story-card .story-card-primary-action:hover::before {
+  left: 100%;
+}
+
+.magical-story-card .story-card-primary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(255, 165, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced secondary action buttons */
+.magical-story-card .story-card-secondary-action {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 191, 0, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.magical-story-card .story-card-secondary-action:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(255, 191, 0, 0.4);
+  box-shadow: 0 0 10px rgba(255, 191, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Entrance animations */
+@keyframes book-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.magical-story-card.book-entrance-animation {
+  animation: book-entrance 0.6s ease-out forwards;
+}
+
+/* Staggered entrance delays */
+.magical-story-card.book-entrance-delay-1 { animation-delay: 0.1s; }
+.magical-story-card.book-entrance-delay-2 { animation-delay: 0.2s; }
+.magical-story-card.book-entrance-delay-3 { animation-delay: 0.3s; }
+.magical-story-card.book-entrance-delay-4 { animation-delay: 0.4s; }
+.magical-story-card.book-entrance-delay-5 { animation-delay: 0.5s; }
+.magical-story-card.book-entrance-delay-6 { animation-delay: 0.6s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .magical-story-card.story-card-container {
+    transform: perspective(900px) rotateX(3deg);
+  }
+  
+  .magical-story-card.story-card-container:hover {
+    transform: perspective(900px) rotateX(0deg) translateY(-5px);
+  }
+  
+  .magical-story-card.book-entrance-animation {
+    animation-duration: 0.4s;
+  }
+}

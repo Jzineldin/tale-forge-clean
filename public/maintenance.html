@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Maintenance - Tale Forge</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+      text-align: center;
+    }
+    .maintenance-page {
+      max-width: 600px;
+      padding: 40px 20px;
+    }
+    .maintenance-content h1 {
+      font-size: 3rem;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .maintenance-content p {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    .eta {
+      font-weight: 600;
+      margin-bottom: 32px !important;
+      font-size: 1.3rem;
+    }
+    .contact-info {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+    }
+    .contact-info a {
+      color: white;
+      text-decoration: underline;
+    }
+    .contact-info a:hover {
+      text-decoration: none;
+    }
+    .magic-tools {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #ffd700;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      .maintenance-content h1 {
+        font-size: 2.5rem;
+      }
+      .maintenance-content p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="maintenance-page">
+    <div class="maintenance-content">
+      <div class="magic-tools">🔧✨</div>
+      <h1>Tale Forge is Getting Better</h1>
+      <p>We're currently making some magical improvements to bring you even better stories!</p>
+      <p class="eta">
+        <span class="status-indicator"></span>
+        We'll be back shortly. Thank you for your patience.
+      </p>
+      
+      <div class="contact-info">
+        <p>Need immediate assistance?</p>
+        <a href="mailto:info@tale-forge.app">info@tale-forge.app</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

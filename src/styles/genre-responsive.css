@@ -1,0 +1,68 @@
+
+/* Mobile-First Responsive Genre Selection Styles */
+
+/* Default mobile styles - Dropdown visible, grid hidden */
+.genre-dropdown-mobile {
+  display: block;
+}
+
+.genre-grid-desktop {
+  display: none;
+}
+
+/* Custom dropdown arrow styling */
+.genre-select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  padding-right: 3rem;
+}
+
+.genre-select:hover {
+  background-color: #475569;
+  border-color: #D4AF37;
+}
+
+.genre-select:focus {
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Tablet and Desktop styles - Grid visible, dropdown hidden */
+@media (min-width: 768px) {
+  .genre-dropdown-mobile {
+    display: none;
+  }
+  
+  .genre-grid-desktop {
+    display: grid;
+  }
+}
+
+/* Enhanced mobile experience */
+@media (max-width: 767px) {
+  /* Adjust section padding for mobile */
+  .genre-showcase-mobile {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Reduce title size on mobile */
+  .genre-title-mobile {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Make selection indicator more prominent on mobile */
+  .genre-selection-indicator {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth transitions for responsive changes */
+.genre-grid-desktop,
+.genre-dropdown-mobile {
+  transition: opacity 0.3s ease-in-out;
+}

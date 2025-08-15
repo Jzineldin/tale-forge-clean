@@ -1,0 +1,5 @@
+/* thin progress ribbon inside the card shadow */
+.card-progress {
+  height: 2px;
+  background: linear-gradient(90deg, #f43f5e, #6366f1);
+} 

@@ -1,0 +1,14 @@
+
+/* SCROLL INDICATOR STYLING */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+  animation: bounce 2s infinite;
+  pointer-events: auto;
+  z-index: 10;
+}

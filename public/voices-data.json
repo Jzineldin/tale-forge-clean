@@ -1,0 +1,58 @@
+[
+  {
+    "id": "A9evEp8yGjv4c3WsIKuY",
+    "name": "Kevin - Founder",
+    "description": "Warm, friendly voice perfect for storytelling",
+    "gender": "male",
+    "category": "storyteller"
+  },
+  {
+    "id": "fCxG8OHm4STbIsWe4aT9",
+    "name": "Rachel",
+    "description": "Clear, expressive voice ideal for children's stories",
+    "gender": "female",
+    "category": "storyteller"
+  },
+  {
+    "id": "pFQStpMdprGFILRDrWR2",
+    "name": "Domi",
+    "description": "Confident, engaging voice for adventure stories",
+    "gender": "female",
+    "category": "storyteller"
+  },
+  {
+    "id": "8quEMRkSpwEaWBzHvTLv",
+    "name": "Bella",
+    "description": "Gentle, soothing voice perfect for bedtime stories",
+    "gender": "female",
+    "category": "storyteller"
+  },
+  {
+    "id": "XXphLKNRxvJ1Qa95KBhX",
+    "name": "Antoni",
+    "description": "Warm, deep voice perfect for dramatic storytelling",
+    "gender": "male",
+    "category": "storyteller"
+  },
+  {
+    "id": "IsEXLHzSvLH9UMB6SLHj",
+    "name": "Arnold",
+    "description": "Strong, confident voice ideal for action stories",
+    "gender": "male",
+    "category": "storyteller"
+  },
+  {
+    "id": "FWipwLM0YqCuwisLprpU",
+    "name": "Adam",
+    "description": "Clear, versatile voice suitable for any story type",
+    "gender": "male",
+    "category": "storyteller"
+  },
+  {
+    "id": "LfjSv1XCdZ96k4B1jNJl",
+    "name": "Sam",
+    "description": "Friendly, engaging voice perfect for children's content",
+    "gender": "male",
+    "category": "storyteller"
+  }
+]

@@ -1,0 +1,131 @@
+/* 
+ * DEPRECATED: This file is scheduled for removal.
+ * Use the hybrid CSS variables + Tailwind approach instead.
+ * See: Docs/development/COMPONENT_STYLING_GUIDE.md
+ * 
+ * Target removal date: 2025-09-15
+ */
+
+/* LANDSCAPE STORY CARD STYLES */
+.story-card-landscape {
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transform: perspective(900px) rotateX(5deg);
+  transition: transform .28s cubic-bezier(.25,.8,.27,1),
+             box-shadow .28s cubic-bezier(.25,.8,.27,1);
+  cursor: pointer;
+}
+
+.story-card-landscape:hover {
+  transform: perspective(900px) rotateX(0deg) translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.4);
+}
+
+/* Fixed image sizing to cover entire card */
+.story-card-landscape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity .6s ease, transform .3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.story-card-landscape img.loaded {
+  opacity: 1;
+}
+
+.story-card-landscape:hover img {
+  transform: scale(1.05);
+}
+
+/* Enhanced content positioning with stronger overlay for better text readability */
+.story-card-landscape .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 3;
+  background: linear-gradient(to top, 
+    rgba(0,0,0,0.98) 0%, 
+    rgba(0,0,0,0.92) 30%, 
+    rgba(0,0,0,0.80) 60%, 
+    rgba(0,0,0,0.60) 80%, 
+    transparent 100%);
+  backdrop-filter: blur(4px) brightness(0.8);
+  border-radius: 0 0 16px 16px;
+  min-height: 100px; /* Base minimum height */
+}
+
+/* Typography styles moved to story-card-shared.css for consistency */
+
+.story-card-landscape p {
+  font-family: "Inter", sans-serif;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.95),
+    0 4px 8px rgba(0,0,0,0.8);
+  overflow: visible;
+  letter-spacing: 0.3px;
+}
+
+/* Badge with enhanced styling and better positioning */
+.story-card-landscape .badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  backdrop-filter: blur(12px) brightness(1.4);
+  border: 2px solid rgba(255,255,255,.4);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 4;
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* === RESPONSIVE CONTENT AREA SCALING === */
+
+/* Mobile */
+@media (max-width: 640px) {
+  .story-card-landscape .content {
+    padding: 12px;
+    min-height: 80px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .story-card-landscape .content {
+    padding: 16px;
+    min-height: 110px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .story-card-landscape .content {
+    padding: 20px;
+    min-height: 130px;
+  }
+}
+
+/* Large Desktop & 4K */
+@media (min-width: 1441px) {
+  .story-card-landscape .content {
+    padding: 24px;
+    min-height: 150px; /* More space for larger text */
+    gap: 8px; /* More spacing between elements */
+  }
+}

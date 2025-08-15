@@ -1,0 +1,380 @@
+/* 
+ * DEPRECATED: This file is scheduled for removal.
+ * Use the hybrid CSS variables + Tailwind approach instead.
+ * See: Docs/development/COMPONENT_STYLING_GUIDE.md
+ * 
+ * Target removal date: 2025-10-15
+ */
+
+/* Story Filter Components Styling */
+
+/* Glass effect for filter components */
+.story-filter-glass {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Filter bar container */
+.story-filter-bar {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.story-filter-bar:hover {
+  border-color: rgba(251, 191, 36, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Search input styling */
+.story-filter-search {
+  background: rgba(51, 65, 85, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: rgb(209, 213, 219);
+  transition: all 0.3s ease;
+}
+
+.story-filter-search:focus {
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+  background: rgba(51, 65, 85, 0.8);
+}
+
+.story-filter-search::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+/* Sort dropdown styling */
+.story-filter-sort {
+  background: rgba(51, 65, 85, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: rgb(209, 213, 219);
+  transition: all 0.3s ease;
+}
+
+.story-filter-sort:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: rgba(51, 65, 85, 0.8);
+}
+
+/* Filter chips styling */
+.story-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.story-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 20px;
+  color: rgb(254, 240, 138);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  animation: filter-chip-enter 0.3s ease;
+}
+
+.story-filter-chip:hover {
+  background: rgba(251, 191, 36, 0.25);
+  border-color: rgba(251, 191, 36, 0.5);
+  transform: translateY(-1px);
+}
+
+.story-filter-chip-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.story-filter-chip-remove:hover {
+  background: rgba(251, 191, 36, 0.3);
+  transform: scale(1.1);
+}
+
+/* Filter button styling */
+.story-filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(51, 65, 85, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  color: rgb(209, 213, 219);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.story-filter-button:hover {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: rgba(251, 191, 36, 0.4);
+  color: rgb(251, 191, 36);
+  transform: translateY(-1px);
+}
+
+.story-filter-button.active {
+  background: rgba(251, 191, 36, 0.2);
+  border-color: rgba(251, 191, 36, 0.5);
+  color: rgb(251, 191, 36);
+}
+
+/* Genre filter buttons */
+.story-filter-genre-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.story-filter-genre-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(51, 65, 85, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  color: rgb(209, 213, 219);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 120px;
+  justify-content: center;
+}
+
+/* Advanced filters section */
+.story-filter-advanced {
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding-top: 16px;
+  margin-top: 16px;
+  animation: filter-expand 0.3s ease;
+}
+
+.story-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.story-filter-row:last-child {
+  margin-bottom: 0;
+}
+
+.story-filter-label {
+  color: rgb(209, 213, 219);
+  font-weight: 500;
+  min-width: 80px;
+  font-size: 0.875rem;
+}
+
+/* Clear all button */
+.story-filter-clear-all {
+  color: rgba(148, 163, 184, 0.8);
+  font-size: 0.875rem;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.story-filter-clear-all:hover {
+  color: rgb(209, 213, 219);
+}
+
+/* View mode toggle */
+.story-filter-view-toggle {
+  display: flex;
+  gap: 4px;
+  background: rgba(51, 65, 85, 0.4);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.story-filter-view-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  color: rgb(148, 163, 184);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.story-filter-view-button:hover {
+  color: rgb(209, 213, 219);
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.story-filter-view-button.active {
+  background: rgb(251, 191, 36);
+  color: rgb(15, 23, 42);
+}
+
+/* Animations */
+@keyframes filter-chip-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes filter-expand {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+/* Loading states */
+.story-filter-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.story-filter-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  border-top-color: rgb(251, 191, 36);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .story-filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .story-filter-label {
+    min-width: auto;
+  }
+  
+  .story-filter-genre-grid {
+    justify-content: flex-start;
+  }
+  
+  .story-filter-genre-button {
+    min-width: auto;
+    flex: 1;
+    min-width: 100px;
+  }
+  
+  .story-filter-chips {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-filter-bar {
+    margin: 0 -16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .story-filter-search {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .story-filter-glass {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: rgba(148, 163, 184, 0.15);
+  }
+  
+  .story-filter-search,
+  .story-filter-sort,
+  .story-filter-button {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(148, 163, 184, 0.2);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .story-filter-glass {
+    border-width: 2px;
+    border-color: rgba(251, 191, 36, 0.8);
+  }
+  
+  .story-filter-chip {
+    border-width: 2px;
+    background: rgba(251, 191, 36, 0.3);
+  }
+  
+  .story-filter-button.active {
+    background: rgb(251, 191, 36);
+    color: rgb(15, 23, 42);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .story-filter-chip,
+  .story-filter-button,
+  .story-filter-search,
+  .story-filter-sort {
+    transition: none;
+  }
+  
+  .story-filter-chip-enter,
+  .filter-expand {
+    animation: none;
+  }
+}

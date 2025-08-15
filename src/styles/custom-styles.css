@@ -1,0 +1,302 @@
+/* Mobile-crack: Safe-scoped CSS layer - one rule kills x-axis overflow globally */
+html, body, #root { 
+  width: 100vw; 
+  overflow-x: hidden; 
+}
+
+/* Security: Slideshow styles moved from inline injection */
+.slideshow-scrollbar-styles {
+  -webkit-overflow-scrolling: touch;
+}
+
+.slideshow-scrollbar-styles::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slideshow-scrollbar-styles::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 3px;
+}
+
+.slideshow-scrollbar-styles::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 3px;
+}
+
+.slideshow-scrollbar-styles::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+}
+
+body.slideshow-open {
+  overflow: hidden;
+}
+
+body.slideshow-active header,
+body.slideshow-active .header-glassmorphic,
+body.slideshow-active .fixed.top-0 {
+  display: none !important;
+}
+
+body.slideshow-active {
+  overflow: hidden;
+}
+
+/* Color hygiene: Removed to preserve landing page orange/yellow buttons */
+
+/* Custom gradient utilities */
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    color-scheme: light dark;
+  }
+  
+  html,
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Magical typography system */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* Body text stays clean */
+  p, button, span, div {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* CSS Custom Properties for Tale Forge Golden Colors */
+:root {
+  --tale-forge-gold: #F4D03F;
+  --tale-forge-gold-light: #F7DC6F;
+  --tale-forge-gold-dark: #F1C40F;
+  --tale-forge-orange: #FF9500;
+  --tale-forge-orange-hover: #E6851A;
+  --tale-forge-orange-light: #FFB84D;
+}
+
+/* Enhanced golden text effect */
+.golden-title {
+  color: var(--tale-forge-gold);
+  text-shadow: 0 0 20px rgba(244, 208, 63, 0.5), 2px 2px 4px rgba(0,0,0,0.8);
+  filter: drop-shadow(0 0 10px rgba(244, 208, 63, 0.3));
+}
+
+/* Golden button styles - mapped to unified primary */
+.golden-button {
+  background: linear-gradient(135deg, var(--primary-amber), var(--primary-amber-dark));
+  color: var(--text-primary);
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-weight: 600;
+}
+
+.golden-button:hover {
+  background: linear-gradient(135deg, var(--primary-amber-dark), #b45309);
+}
+
+.golden-button-outline {
+  background: transparent;
+  color: var(--primary-amber);
+  border: 2px solid var(--primary-amber);
+  border-radius: var(--radius-md);
+  padding: calc(var(--space-md) - 2px) calc(var(--space-lg) - 2px);
+}
+
+.golden-button-outline:hover {
+  background: var(--primary-amber);
+  color: var(--text-primary);
+}
+
+/* Global heading styles for consistency */
+.section-heading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #F4D03F;
+  text-shadow: 0 0 20px rgba(244, 208, 63, 0.5), 2px 2px 4px rgba(0,0,0,0.8);
+  font-weight: 700;
+}
+
+.section-subheading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #F7DC6F;
+  font-weight: 400;
+}
+
+.section-body-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+@keyframes golden-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Tale Forge title styling - Beautiful Gold! */
+.tale-forge-title {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #FFD700 !important; /* cleaner gold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.6) !important; /* no glow */
+  filter: none !important; /* remove drop shadow glow */
+}
+
+/* Tale Forge glow effect */
+.tale-forge-glow {
+  color: #D4AF37;
+  opacity: 0.3;
+  text-shadow: 
+    0 0 30px rgba(212, 175, 55, 0.8),
+    0 0 60px rgba(212, 175, 55, 0.6);
+}
+
+/* Magical text effects */
+.magical-text {
+  font-family: 'Playfair Display', serif !important;
+  color: #fbbf24 !important;
+  text-shadow: 
+    0 0 15px rgba(251, 191, 36, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Magical heading styles */
+.magical-heading {
+  font-family: 'Playfair Display', serif !important;
+  color: #ffffff !important;
+  text-shadow: 
+    0 0 10px rgba(251, 191, 36, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+  line-height: 1.3 !important;
+  padding-bottom: 0.2em !important;
+}
+
+/* Enhanced text contrast */
+.text-high-contrast {
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 8px rgba(251, 191, 36, 0.2);
+  line-height: 1.5 !important;
+  padding-bottom: 0.2em !important;
+}
+
+.text-readable {
+  color: #F8F9FA !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  line-height: 1.6 !important;
+  padding-bottom: 0.2em !important;
+}
+
+/* Clean body text */
+.clean-text {
+  font-family: 'Inter', sans-serif !important;
+  color: #E5E7EB !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Button text */
+.btn-text {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600;
+}
+
+/* Fantasy Typography System */
+.fantasy-title {
+  font-family: 'Cinzel', serif !important;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.fantasy-heading {
+  font-family: 'Cinzel', serif !important;
+  color: #fbbf24 !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.fantasy-body {
+  font-family: 'Cormorant Garamond', serif !important;
+  color: #fef3c7 !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.fantasy-subtitle {
+  font-family: 'Cormorant Garamond', serif !important;
+  color: #fde68a !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Enhanced readable text with fantasy theme */
+.text-fantasy-readable {
+  color: #fef3c7 !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  line-height: 1.6 !important;
+}
+
+/* Slideshow fullscreen styles */
+body.slideshow-active {
+  overflow: hidden !important;
+}
+
+/* Hide header completely when slideshow is active */
+body.slideshow-active header,
+body.slideshow-active .header-glassmorphic,
+body.slideshow-active .fixed.top-0,
+body.slideshow-active nav,
+body.slideshow-active .main-header {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure slideshow has highest z-index */
+.slideshow-container {
+  z-index: 9999 !important;
+}
+
+/* Disable skeleton animations and competing keyframes */
+.skeleton-motion, .ani-* { 
+  display: none !important; 
+}
+
+/* Hide scrollbar for mobile swipers */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Custom scrollbar for genre carousel */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(253, 224, 71, 0.5); /* yellow-400 with 50% opacity */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+}

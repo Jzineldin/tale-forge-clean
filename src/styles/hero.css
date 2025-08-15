@@ -1,0 +1,99 @@
+
+@import './global.css';
+@import './story-grid.css';
+@import './story-card-landscape.css';
+@import './story-card-portrait.css';
+@import './story-card-animations.css';
+@import './story-card-shared.css';
+@import './animations.css';
+@import './hero-title.css';
+@import './hero-quote.css';
+@import './hero-cta.css';
+@import './hero-scroll.css';
+
+/* CURSIVE TEXT STYLING - Enhanced specificity for italic styling */
+.hero-section .font-cursive,
+em.font-cursive {
+  font-family: 'Cormorant Garamond', cursive !important;
+  font-style: italic !important;
+  color: #FCD34D !important; /* amber-200 equivalent */
+  font-weight: 500 !important;
+}
+
+/* HERO TEXT OVERRIDE - Ensure white text for descriptions */
+.hero-section p {
+  color: white !important;
+}
+
+/* HERO BUTTONS LAYOUT */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.demo-button {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.demo-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.secondary-button {
+  background: transparent;
+  color: #667eea;
+  padding: 12px 24px;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background: #667eea;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-buttons button {
+    width: 100%;
+    max-width: 280px;
+  }
+}

@@ -1,0 +1,174 @@
+/* Design System Variables */
+:root {
+  /* Primary Brand Colors */
+  --color-primary: #f59e0b;         /* From --brand-amber */
+  --color-primary-dark: #d97706;    /* From --brand-amber-dark */
+  --color-primary-light: #fcd34d;   /* From --brand-amber-light */
+  --color-gold: #D4AF37;            /* From --brand-gold */
+  --color-gold-dark: #B8860B;       /* From --brand-gold-dark */
+  --color-gold-light: #F5E6A3;      /* From --brand-gold-light */
+  
+  /* Secondary Colors */
+  --color-blue: #3B82F6;            /* From --kid-blue */
+  --color-green: #10B981;           /* From --kid-green */
+  --color-purple: #8B5CF6;          /* From --kid-purple */
+  --color-pink: #F472B6;            /* From --kid-pink */
+  --color-orange: #FB923C;          /* From --kid-orange */
+  
+  /* Text Colors */
+  --color-text-primary: #FFFFFF;    /* From --text-light */
+  --color-text-secondary: #F8F9FA;  /* From --text-light-readable */
+  --color-text-muted: #D1D5DB;      /* From --text-muted */
+  --color-text-subtle: #9CA3AF;     /* From --text-muted-readable */
+  --color-text-dark: #1F2937;       /* From --text-dark */
+  
+  /* Background Colors - Less transparent for better readability */
+  --color-bg-primary: rgba(15, 23, 42, 0.95);      /* Increased opacity from 0.4 to 0.95 */
+  --color-bg-secondary: rgba(30, 41, 59, 0.95);    /* Increased opacity from 0.8 to 0.95 */
+  --color-bg-overlay: rgba(15, 23, 42, 0.98);      /* Increased opacity from 0.9 to 0.98 */
+  --color-bg-card: rgba(30, 41, 59, 0.95);         /* Increased opacity from 0.7 to 0.95 */
+  --color-bg-card-hover: rgba(30, 41, 59, 0.98);   /* Increased opacity from 0.9 to 0.98 */
+  
+  /* Border Colors - More visible borders */
+  --color-border-primary: rgba(255, 255, 255, 0.3);    /* Increased from 0.1 to 0.3 */
+  --color-border-secondary: rgba(245, 158, 11, 0.5);   /* Increased from 0.3 to 0.5 */
+  --color-border-focus: rgba(245, 158, 11, 0.8);       /* Increased from 0.5 to 0.8 */
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4rem;     /* 64px */
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Typography Scale */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+  --font-size-6xl: 3.75rem;   /* 60px */
+  --font-size-7xl: 4.5rem;    /* 72px */
+  --font-size-8xl: 6rem;      /* 96px */
+  
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+  
+  /* shadcn variables - Override with dark slate theme */
+  --background: 222.2 84% 4.9%; /* Dark slate background */
+  --foreground: 210 40% 98%; /* Light foreground */
+  --card: 222.2 84% 4.9% / 0.8; /* Dark slate card with transparency */
+  --card-foreground: 210 40% 98%; /* Light card text */
+  --popover: 222.2 84% 4.9%; /* Dark popover */
+  --popover-foreground: 210 40% 98%; /* Light popover text */
+  --primary: 45 93% 47%; /* Amber/Gold primary */
+  --primary-foreground: 26 83% 14%; /* Dark primary text */
+  --secondary: 217.2 32.6% 17.5%; /* Dark slate secondary */
+  --secondary-foreground: 210 40% 98%; /* Light secondary text */
+  --muted: 217.2 32.6% 17.5%; /* Dark muted */
+  --muted-foreground: 215.4 16.3% 46.9%; /* Muted text */
+  --accent: 45 93% 47%; /* Amber accent */
+  --accent-foreground: 26 83% 14%; /* Dark accent text */
+  --destructive: 0 84.2% 60.2%; /* Red destructive */
+  --destructive-foreground: 210 40% 98%; /* Light destructive text */
+  --border: 217.2 32.6% 17.5%; /* Dark border */
+  --input: 217.2 32.6% 17.5%; /* Dark input */
+  --ring: 45 93% 47%; /* Amber ring */
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.5rem;
+}
+
+/* Dark mode - ensure proper dark theme */
+.dark {
+  --background: 222.2 84% 4.9%; /* Dark slate */
+  --foreground: 210 40% 98%; /* Light text */
+  --card: 222.2 84% 4.9% / 0.8; /* Dark card with transparency */
+  --card-foreground: 210 40% 98%; /* Light card text */
+  --popover: 222.2 84% 4.9%; /* Dark popover */
+  --popover-foreground: 210 40% 98%; /* Light popover text */
+  --primary: 45 93% 47%; /* Amber primary */
+  --primary-foreground: 26 83% 14%; /* Dark primary text */
+  --secondary: 217.2 32.6% 17.5%; /* Dark secondary */
+  --secondary-foreground: 210 40% 98%; /* Light secondary text */
+  --muted: 217.2 32.6% 17.5%; /* Dark muted */
+  --muted-foreground: 215.4 16.3% 46.9%; /* Muted text */
+  --accent: 45 93% 47%; /* Amber accent */
+  --accent-foreground: 210 40% 98%; /* Light accent text */
+  --destructive: 0 62.8% 30.6%; /* Dark red */
+  --destructive-foreground: 210 40% 98%; /* Light destructive text */
+  --border: 217.2 32.6% 17.5%; /* Dark border */
+  --input: 217.2 32.6% 17.5%; /* Dark input */
+  --ring: 45 93% 47%; /* Amber ring */
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+}
+
+/* Legacy variable mappings for backward compatibility during transition */
+:root {
+  /* Map legacy variable names to new standardized names */
+  --brand-amber: var(--color-primary);
+  --brand-amber-dark: var(--color-primary-dark);
+  --brand-amber-light: var(--color-primary-light);
+  --brand-gold: var(--color-gold);
+  --brand-gold-dark: var(--color-gold-dark);
+  --brand-gold-light: var(--color-gold-light);
+  
+  --kid-blue: var(--color-blue);
+  --kid-green: var(--color-green);
+  --kid-purple: var(--color-purple);
+  --kid-pink: var(--color-pink);
+  --kid-orange: var(--color-orange);
+  
+  --text-light: var(--color-text-primary);
+  --text-light-readable: var(--color-text-secondary);
+  --text-muted: var(--color-text-muted);
+  --text-muted-readable: var(--color-text-subtle);
+  --text-dark: var(--color-text-dark);
+  
+  --bg-primary: var(--color-bg-primary);
+  --bg-secondary: var(--color-bg-secondary);
+  --bg-overlay: var(--color-bg-overlay);
+  --bg-card: var(--color-bg-card);
+  --bg-card-hover: var(--color-bg-card-hover);
+}

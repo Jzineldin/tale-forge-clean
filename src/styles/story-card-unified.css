@@ -1,0 +1,476 @@
+/* 
+ * DEPRECATED: This file is scheduled for removal.
+ * Use the hybrid CSS variables + Tailwind approach instead.
+ * See: Docs/development/COMPONENT_STYLING_GUIDE.md
+ * 
+ * Target removal date: 2025-09-15
+ */
+
+/* UNIFIED STORY CARD STYLES */
+
+/* Base container styles with glass-card aesthetic */
+.story-card-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, rgba(30, 30, 40, 0.7), rgba(20, 20, 30, 0.8));
+  border: 1px solid rgba(255, 191, 0, 0.2);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 191, 0, 0.1) inset;
+  /* Mobile optimizations */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  /* Enhanced mobile touch targets */
+  min-height: 200px; /* Ensure minimum touch area */
+}
+
+/* Landscape variant */
+.story-card-container.landscape {
+  aspect-ratio: 4/3;
+  transform: perspective(1200px) rotateX(2deg);
+  /* Mobile-friendly touch targets */
+  min-height: 220px;
+}
+
+/* Portrait variant */
+.story-card-container.portrait {
+  aspect-ratio: 3/4;
+  transform: perspective(1200px) rotateX(3deg);
+  /* Mobile-friendly touch targets */
+  min-height: 260px;
+}
+
+/* Hover effects */
+.story-card-container:hover {
+  transform: perspective(1200px) rotateX(0deg) translateY(-3px);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 191, 0, 0.3) inset;
+  border-color: rgba(255, 191, 0, 0.4);
+}
+
+/* Mobile-specific hover states */
+@media (hover: none) and (pointer: coarse) {
+  .story-card-container:hover {
+    transform: none; /* Disable hover transforms on touch devices */
+  }
+  
+  .story-card-container:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Thumbnail image styles */
+.story-card-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 16px;
+}
+
+/* Fallback for missing images */
+.story-card-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(30, 41, 59, 0.9) 0%,
+    rgba(51, 65, 85, 0.8) 50%,
+    rgba(30, 41, 59, 0.9) 100%
+  );
+  z-index: 0;
+  border-radius: 16px;
+}
+
+.story-card-thumbnail.loaded {
+  opacity: 1;
+}
+
+.story-card-container:hover .story-card-thumbnail {
+  transform: scale(1.05);
+}
+
+/* Mobile-specific thumbnail behavior */
+@media (hover: none) and (pointer: coarse) {
+  .story-card-container:hover .story-card-thumbnail {
+    transform: none; /* Disable hover scaling on touch devices */
+  }
+}
+
+/* Header styles */
+.story-card-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Badge styles */
+.story-card-badge {
+  width: 40px;
+  height: 40px;
+  backdrop-filter: blur(12px) brightness(1.4);
+  border: 2px solid rgba(255, 191, 0, 0.4);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Enhanced touch target size */
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.story-card-badge.top-right {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.story-card-badge.top-left {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.story-card-container:hover .story-card-badge {
+  transform: scale(1.1);
+  border-color: rgba(255, 191, 0, 0.6);
+}
+
+/* Mobile-specific badge behavior */
+@media (hover: none) and (pointer: coarse) {
+  .story-card-badge {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .story-card-container:hover .story-card-badge {
+    transform: none; /* Disable hover scaling on touch devices */
+  }
+  
+  .story-card-badge:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Content styles */
+.story-card-content {
+  position: absolute;
+  bottom: 60px; /* Leave space for footer */
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: linear-gradient(to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.65) 20%,
+    rgba(0, 0, 0, 0.85) 60%,
+    transparent 100%);
+  backdrop-filter: blur(4px) brightness(0.8);
+}
+
+/* Title styles */
+.story-card-title {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  color: #FFD700;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 4px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* Description styles */
+.story-card-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    0 2px 6px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Metadata styles */
+.story-card-metadata {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.story-card-metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Footer styles */
+.story-card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  z-index: 4;
+  background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    transparent 100%);
+  backdrop-filter: blur(4px);
+  border-radius: 0 0 16px 16px;
+}
+
+/* Actions styles */
+.story-card-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Primary action button */
+.story-card-primary-action {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1A1A2E;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(255, 165, 0, 0.3);
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Enhanced touch target size */
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.story-card-primary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+}
+
+/* Mobile-specific primary action behavior */
+@media (hover: none) and (pointer: coarse) {
+  .story-card-primary-action {
+    padding: 12px 20px; /* Larger touch targets */
+  }
+  
+  .story-card-primary-action:hover {
+    transform: none; /* Disable hover transforms on touch devices */
+  }
+  
+  .story-card-primary-action:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Secondary action button */
+.story-card-secondary-action {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* Mobile touch optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* Enhanced touch target size */
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.story-card-secondary-action:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile-specific secondary action behavior */
+@media (hover: none) and (pointer: coarse) {
+  .story-card-secondary-action {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .story-card-secondary-action:hover {
+    background: rgba(255, 255, 255, 0.1); /* Disable hover on touch devices */
+  }
+  
+  .story-card-secondary-action:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+  }
+}
+
+/* Status indicators */
+.story-card-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.story-card-status.completed {
+  background: rgba(0, 200, 83, 0.2);
+  color: #00C853;
+}
+
+.story-card-status.in-progress {
+  background: rgba(255, 193, 7, 0.2);
+  color: #FFC107;
+}
+
+.story-card-status.new {
+  background: rgba(33, 150, 243, 0.2);
+  color: #2196F3;
+}
+
+/* Enhanced responsive styles for mobile optimization */
+@media (max-width: 640px) {
+  .story-card-container {
+    /* Improved mobile touch targets */
+    min-height: 240px;
+  }
+  
+  .story-card-header {
+    padding: 12px;
+  }
+  
+  .story-card-content {
+    padding: 12px;
+    bottom: 70px; /* More space for mobile footer */
+  }
+  
+  .story-card-footer {
+    padding: 12px;
+  }
+  
+  .story-card-badge {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .story-card-title {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  .story-card-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  .story-card-actions {
+    gap: 12px; /* More space between mobile actions */
+  }
+  
+  .story-card-primary-action {
+    padding: 12px 16px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .story-card-title {
+    font-size: 1.125rem;
+  }
+  
+  .story-card-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .story-card-title {
+    font-size: 1.25rem;
+  }
+  
+  .story-card-description {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (prefers-reduced-motion: reduce) {
+  .story-card-container,
+  .story-card-thumbnail,
+  .story-card-badge,
+  .story-card-primary-action,
+  .story-card-secondary-action {
+    transition: none;
+  }
+  
+  .story-card-container:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .story-card-container {
+    border: 2px solid rgba(255, 191, 0, 0.8);
+  }
+  
+  .story-card-badge {
+    border: 3px solid rgba(255, 191, 0, 0.9);
+  }
+  
+  .story-card-primary-action {
+    border: 2px solid #1A1A2E;
+  }
+}

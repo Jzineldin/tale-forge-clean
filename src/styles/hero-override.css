@@ -1,0 +1,19 @@
+/* Override hero section min-height for better content flow */
+.hero-section {
+  min-height: auto !important;
+  padding: 5rem 1rem 3rem 1rem !important;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto !important;
+    padding: 3rem 1rem 2rem 1rem !important;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto !important;
+    padding: 2rem 1rem 1.5rem 1rem !important;
+  }
+}

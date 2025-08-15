@@ -1,0 +1,17 @@
+
+/* CTA BUTTON STYLING */
+.cta-btn {
+  background: linear-gradient(90deg,#FBCB43 0%,#FF8A05 100%);
+  border-radius: 8px;
+  padding: 12px 32px;
+  transition: transform .25s ease-out;
+  pointer-events: auto;
+}
+
+.cta-btn:hover { 
+  transform: scale(1.03); 
+}
+
+.cta-btn:active { 
+  transform: scale(.98); 
+}

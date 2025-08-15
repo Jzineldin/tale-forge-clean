@@ -1,0 +1,380 @@
+/* Advanced Mobile Optimizations - Phase 2 CSS */
+
+/* PWA and Offline Indicators */
+.pwa-install-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.pwa-install-banner.show {
+  transform: translateY(0);
+}
+
+.offline-indicator {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  background: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  z-index: 50;
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+.online-indicator {
+  background: #10b981;
+  animation: slideInFromRight 0.3s ease-out, fadeOut 2s ease-in-out 1s forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Battery Saver Mode */
+.battery-saver-mode * {
+  animation-duration: 0.1s !important;
+  transition-duration: 0.1s !important;
+}
+
+.battery-saver-mode .animate-spin {
+  animation-duration: 2s !important;
+}
+
+.battery-saver-mode .backdrop-blur-sm {
+  backdrop-filter: none !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* High Contrast Mode */
+[data-high-contrast="true"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --primary: #ffff00;
+  --primary-foreground: #000000;
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+  --muted: #404040;
+  --muted-foreground: #ffffff;
+  --accent: #ffff00;
+  --accent-foreground: #000000;
+  --destructive: #ff0000;
+  --destructive-foreground: #ffffff;
+  --border: #ffffff;
+  --input: #1a1a1a;
+  --ring: #ffff00;
+}
+
+[data-high-contrast="true"] .glass-hero,
+[data-high-contrast="true"] .glass-enhanced {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: none !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Reduced Motion */
+[data-reduced-motion="true"] * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+[data-reduced-motion="true"] .animate-magical-float,
+[data-reduced-motion="true"] .animate-magical-spin-slow,
+[data-reduced-motion="true"] .animate-magical-fade-in {
+  animation: none !important;
+}
+
+/* Touch Accommodations */
+.touch-optimized button,
+.touch-optimized [role="button"],
+.touch-optimized .btn {
+  min-height: var(--touch-target-size, 48px);
+  min-width: var(--touch-target-size, 48px);
+  padding: 0.75rem 1rem;
+}
+
+.touch-optimized input,
+.touch-optimized textarea,
+.touch-optimized select {
+  min-height: var(--touch-target-size, 48px);
+  padding: 0.75rem;
+  font-size: 16px; /* Prevent zoom on iOS */
+}
+
+/* Progressive Image Loading */
+.progressive-image-container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.progressive-image-container.dark {
+  background: linear-gradient(90deg, #374151 25%, transparent 37%, #374151 63%);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.progressive-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.progressive-image.loading {
+  opacity: 0.5;
+}
+
+.progressive-image.loaded {
+  opacity: 1;
+}
+
+.progressive-image.error {
+  opacity: 0.3;
+}
+
+/* Gesture Feedback */
+.gesture-feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  z-index: 1000;
+  pointer-events: none;
+  animation: gesturePopup 0.5s ease-out;
+}
+
+@keyframes gesturePopup {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* Performance Monitoring */
+.performance-warning {
+  position: fixed;
+  bottom: 4rem;
+  right: 1rem;
+  background: #f59e0b;
+  color: #92400e;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  max-width: 300px;
+  z-index: 40;
+  animation: slideInFromBottom 0.3s ease-out;
+}
+
+.performance-critical {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Adaptive Loading States */
+.loading-minimal .skeleton {
+  background: #374151;
+  animation: none;
+}
+
+.loading-conservative .skeleton {
+  animation-duration: 2s;
+}
+
+.loading-aggressive .skeleton {
+  animation-duration: 1s;
+}
+
+/* Network-Aware Styles */
+.slow-connection .lazy-load-placeholder {
+  background: #6b7280;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 0.875rem;
+}
+
+.slow-connection .high-quality-image {
+  display: none;
+}
+
+.slow-connection .low-quality-image {
+  display: block;
+}
+
+/* Virtual Scrolling Container */
+.virtual-scroll-container {
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.virtual-scroll-content {
+  position: relative;
+}
+
+.virtual-scroll-item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+/* Cache Status Indicators */
+.cache-status {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  z-index: 50;
+  font-family: monospace;
+}
+
+.cache-status.development-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cache-status.development-only {
+    display: block;
+  }
+}
+
+/* Advanced Mobile Grid Layouts */
+.mobile-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile-First Component Spacing */
+.mobile-spacing {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .mobile-spacing {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-spacing {
+    padding: 2rem;
+  }
+}
+
+/* Optimized Animations for Mobile */
+@media (max-width: 768px) {
+  .animate-bounce {
+    animation-duration: 1.5s;
+  }
+  
+  .animate-pulse {
+    animation-duration: 2.5s;
+  }
+  
+  .animate-spin {
+    animation-duration: 1.5s;
+  }
+}
+
+/* Low-end Device Optimizations */
+@media (max-width: 480px) and (max-resolution: 150dpi) {
+  .glass-hero,
+  .glass-enhanced {
+    backdrop-filter: none !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+  }
+  
+  .animate-magical-float,
+  .animate-magical-spin-slow {
+    animation: none !important;
+  }
+  
+  .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+}
