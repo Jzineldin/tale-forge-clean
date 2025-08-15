@@ -15,6 +15,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import CookieConsent from "@/components/CookieConsent";
 import CookieDemo from "@/components/CookieDemo";
 import { AuthMigrationWrapper } from "@/components/auth/AuthMigrationWrapper";
+import BackgroundManager from "@/components/BackgroundManager";
 
 import { Suspense, lazy } from "react";
 import { HelmetProvider } from 'react-helmet-async';
@@ -157,6 +158,7 @@ function App() {
                             
                             <div className="min-h-screen relative">
                               {/* Apply the astronaut background */}
+                              <BackgroundManager />
                               <div className="scene-bg"></div>
                               <script src={`/scripts/analytics.js?v=${ASSET_VERSION}`} />
                               <Layout>

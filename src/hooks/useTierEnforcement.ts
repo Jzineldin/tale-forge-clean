@@ -19,6 +19,15 @@ export const useTierEnforcement = () => {
   const checkStoryCreationLimit = (): TierEnforcementResult => {
     // TODO: Implement proper tier-based limits
     // For now, enforce a basic 20 chapter limit for free users
+    // Check if user is admin with bypass privileges
+    if (user?.email === "jzineldin@gmail.com") {
+      return {
+        canProceed: true,
+        currentUsage: 0,
+        limit: -1, // Unlimited
+      };
+    }
+    
     const currentUsage = 38; // This should come from actual usage tracking
     const limit = 20;
 
@@ -111,3 +120,4 @@ export const useTierEnforcement = () => {
     enforceImageGeneration,
   };
 };
+
