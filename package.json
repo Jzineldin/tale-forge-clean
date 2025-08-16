@@ -14,7 +14,10 @@
     "preview:spa": "node scripts/spa-preview.js",
     "audit": "node scripts/run-full-audit.js",
     "lighthouse": "lhci autorun",
-    "test": "echo \"No tests specified\" && exit 0",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
     "test:server": "node scripts/test-server-startup.js"
   },
   "dependencies": {
