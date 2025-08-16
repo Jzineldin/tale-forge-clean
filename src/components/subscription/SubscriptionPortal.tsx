@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
 const SubscriptionPortal = () => {
@@ -25,10 +25,15 @@ const SubscriptionPortal = () => {
         if (tierError) throw tierError;
         console.log('User tier:', tierData.tier);
 
+        // Get the user's session token for authentication
+        const { data: session } = await supabase.auth.getSession();
+        if (!session.session) throw new Error('No active session');
+
         const { data, error: portalError } = await supabase.functions.invoke('customer-portal', {
-          body: JSON.stringify({
-            customerId: userData.user?.user_metadata.stripe_customer_id
-          }),
+          headers: {
+            Authorization: Bearer ,
+          },
+          body: {},
         });
 
         if (portalError) throw portalError;
@@ -62,8 +67,8 @@ const SubscriptionPortal = () => {
         <p className="mb-4">
           Manage your subscription, update payment methods, and view invoices through our secure Stripe portal.
         </p>
-        <a 
-          href={portalUrl} 
+        <a
+          href={portalUrl}
           className="inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition"
           target="_blank"
           rel="noopener noreferrer"
@@ -71,14 +76,14 @@ const SubscriptionPortal = () => {
           Open Customer Portal
         </a>
       </div>
-      
+
       <div className="border-t pt-4">
         <h3 className="text-lg font-semibold mb-3">Cancel Subscription</h3>
         <p className="mb-4 text-sm text-gray-600">
           Canceling your subscription will downgrade you to the Free tier at the end of your current billing period.
           You'll retain access to premium features until then.
         </p>
-        <button 
+        <button
           className="text-red-600 hover:text-red-800 font-medium"
           onClick={() => {
             if (confirm('Are you sure you want to cancel your subscription? You will lose access to premium features at the end of your billing period.')) {
