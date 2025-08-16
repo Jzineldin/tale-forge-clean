@@ -86,6 +86,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       return;
     }
 
+        // Prevent multiple concurrent subscription fetches
+    if (subscriptionLoading) {
+      console.log('AuthProvider: Subscription already loading, skipping...');
+      return;
+    }
+
     setSubscriptionLoading(true);
     try {
       console.log('AuthProvider: Fetching subscription data for user:', currentUser.id, 'email:', currentUser.email);
@@ -371,3 +377,4 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+

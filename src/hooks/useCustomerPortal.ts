@@ -1,9 +1,9 @@
-﻿import { useMutation } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
 const openCustomerPortal = async () => {
-  console.log('🔗 Opening customer portal...');
+  console.log('?? Opening customer portal...');
 
   try {
     // Get the user's session token for authentication
@@ -14,7 +14,7 @@ const openCustomerPortal = async () => {
 
     const { data, error } = await supabase.functions.invoke('customer-portal', {
       headers: {
-        Authorization: Bearer ,
+        Authorization: `Bearer ${session.session.access_token}`,
       },
       body: {},
     });
@@ -63,8 +63,9 @@ export const useCustomerPortal = () => {
           duration: 5000
         });
       } else {
-        toast.error(Failed to open billing portal: );
+        toast.error('Failed to open billing portal');
       }
     },
   });
 };
+

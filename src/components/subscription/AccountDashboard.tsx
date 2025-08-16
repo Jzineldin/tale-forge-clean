@@ -48,6 +48,58 @@ export default function AccountDashboard() {
   const { mutate: openCustomerPortal, isPending: isOpeningPortal } = useCustomerPortal();
   const { mutate: createCheckout } = useStripeCheckout();
   const { subscriptionLoading } = useAuth();
+
+  // Show loading skeleton while subscription data is being fetched
+  if (subscriptionLoading && !effectiveTier) {
+    return (
+      <div className="page-container relative min-h-screen">
+        {/* Astronaut Background */}
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-black/40"></div>
+          <div className="absolute top-20 right-10 w-32 h-32 opacity-30">
+            <div className="w-full h-full bg-gradient-to-br from-white/20 to-white/5 rounded-full flex items-center justify-center text-4xl">
+              
+            </div>
+          </div>
+          <div className="absolute bottom-20 left-10 w-24 h-24 opacity-20">
+            <div className="w-full h-full bg-gradient-to-br from-yellow-400/20 to-orange-400/10 rounded-full flex items-center justify-center text-3xl">
+              
+            </div>
+          </div>
+        </div>
+        
+        <div className="page-content relative z-10">
+          <div className="profile-settings-container">
+            <div className="flex items-start justify-between mb-8">
+              <div>
+                <h1 className="text-hero" style={{ color: "#fbbf24", textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>Account</h1>   
+                <p className="text-subheading" style={{ color: "#e5e7eb" }}>Loading your account information...</p>      
+              </div>
+            </div>
+            
+            <Card className="glass-enhanced backdrop-blur-lg bg-black/40 border border-white/20 rounded-2xl shadow-xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-heading">
+                  <Crown className="w-5 h-5 text-primary-amber animate-pulse" />
+                  Account Dashboard
+                </CardTitle>
+                <CardDescription className="text-small text-muted">
+                  Loading your subscription and usage data...
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-8">
+                <div className="animate-pulse space-y-4">
+                  <div className="h-4 bg-white/10 rounded w-3/4"></div>
+                  <div className="h-4 bg-white/10 rounded w-1/2"></div>
+                  <div className="h-4 bg-white/10 rounded w-2/3"></div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    );
+  }
   
 
 
@@ -134,8 +186,33 @@ export default function AccountDashboard() {
       : undefined;
 
   return (
-    <div className="page-container">
-      <div className="page-content">
+    <div className="page-container relative min-h-screen">
+      {/* Astronaut Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-black/40"></div>
+        <div className="absolute top-20 right-10 w-32 h-32 opacity-30">
+          <div className="w-full h-full bg-gradient-to-br from-white/20 to-white/5 rounded-full flex items-center justify-center text-4xl">
+            ??
+          </div>
+        </div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 opacity-20">
+          <div className="w-full h-full bg-gradient-to-br from-yellow-400/20 to-orange-400/10 rounded-full flex items-center justify-center text-3xl">
+            
+          </div>
+        </div>
+        <div className="absolute top-1/3 left-1/4 w-16 h-16 opacity-15">
+          <div className="w-full h-full bg-gradient-to-br from-blue-400/20 to-purple-400/10 rounded-full flex items-center justify-center text-2xl">
+            
+          </div>
+        </div>
+        <div className="absolute bottom-1/3 right-1/4 w-20 h-20 opacity-25">
+          <div className="w-full h-full bg-gradient-to-br from-pink-400/20 to-purple-400/10 rounded-full flex items-center justify-center text-2xl">
+            
+          </div>
+        </div>
+      </div>
+      
+      <div className="page-content relative z-10">
         <div className="profile-settings-container">
           {/* Page Header */}
           <div className="flex items-start justify-between mb-8">
@@ -350,7 +427,7 @@ export default function AccountDashboard() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <p className="text-small text-muted">Account status:</p>
-                      <p className="font-medium">{isSubscribed ? 'Subscribed' : 'Free'}</p>
+                      <p className="font-medium">{isSubscribed ? 'Subscribed' : displayTier}</p>
                     </div>
                     {isFounder && (
                       <>
@@ -459,3 +536,6 @@ export default function AccountDashboard() {
     </div>
   );
 }
+
+
+
